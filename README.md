@@ -62,6 +62,11 @@ $ npm run test:cov
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
+### install db with docker
+* docker-compose up -d
+* CREATE SCHEMA test DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+* npm install --save @nestjs/typeorm typeorm mysql2
+
 ## Stay in touch
 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
