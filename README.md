@@ -70,8 +70,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ### JWT
 * https://jwt.io/
 * npm i --save @nestjs/jwt
-
-
+* jwt guard - middle ware
+* npm i --save passport @nestjs/passport passport-jwt @types/passport-jwt 
 
 
 ## Stay in touch
