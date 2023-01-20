@@ -1,6 +1,7 @@
 import { HttpException, Injectable, HttpStatus, UnauthorizedException } from '@nestjs/common';
 import { UserDTO } from './dto/user.dto';
 import { UserService } from './user.service';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -15,11 +16,12 @@ export class AuthService {
         }
         return this.userService.save(newUser);
     }
-    async validateUser(user: UserDTO): Promise<UserDTO | undefined> {
+    async validateUser(user: UserDTO): Promise<string | undefined> {
         let userFind: UserDTO = await this.userService.findByFields({ where: { username: user.username } });
-        if (!userFind || user.password !== userFind.password) {
+        const validPassword = await bcrypt.compare(user.password, userFind.password);
+        if (!userFind || !validPassword) {
             throw new UnauthorizedException();
         }
-        return userFind;
+        return "loginSuccess!";
     }
 }
