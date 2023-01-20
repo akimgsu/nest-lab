@@ -67,6 +67,13 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 * CREATE SCHEMA test DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 * npm install --save @nestjs/typeorm typeorm mysql2
 
+### JWT
+* https://jwt.io/
+* npm i --save @nestjs/jwt
+
+
+
+
 ## Stay in touch
 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
