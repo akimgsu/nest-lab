@@ -76,6 +76,10 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ### validation
 * npm i --save class-validator class-transformer
 
+### cookie
+* npm i cookie-parser @types/cookie-parser
+
+
 
 ## Stay in touch
 
