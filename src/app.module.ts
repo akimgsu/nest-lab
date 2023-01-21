@@ -4,25 +4,15 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { CatsModule } from './cats/cats.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Cat } from './cats/entity/cats.entity';
+import { Cat } from './domain/cats.entity';
 import { AuthModule } from './auth/auth.module';
-import { User } from './auth/entity/user.entity';
-import { UserAuthority } from './auth/entity/user-authority.entity';
+import { User } from './domain/user.entity';
+import { UserAuthority } from './domain/user-authority.entity';
+import { ormConfig } from './orm.config';
 
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
-    port: 13306,
-    username: 'root',
-    password: 'root',
-    database: 'test',
-    entities: [Cat, User, UserAuthority],
-    synchronize: false,
-    logging: true
-
-  }), UsersModule, CatsModule, AuthModule],
+  imports: [TypeOrmModule.forRootAsync({ useFactory: ormConfig }), UsersModule, CatsModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
