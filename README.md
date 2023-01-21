@@ -79,7 +79,17 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ### cookie
 * npm i cookie-parser @types/cookie-parser
 
-
+### config
+* npm i @nestjs/config
+* npm i js-yaml @types/js-yaml
+* ConfigService를 다른 곳에서 사용하시려면 construtor 추가하면 됩니다.
+```
+import { ConfigService } from '@nestjs/config';
+...
+constructor(private configService: ConfigService);
+...
+configService.get('...');
+```
 
 ## Stay in touch
 
