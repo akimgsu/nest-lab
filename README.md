@@ -74,7 +74,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 * npm i --save passport @nestjs/passport passport-jwt @types/passport-jwt 
 
 ### validation
-* npm i --save class-validator
+* npm i --save class-validator class-transformer
 
 
 ## Stay in touch
